@@ -4,8 +4,9 @@ import (
 	"database/sql"
 	"fmt"
 
-	_ "github.com/mattn/go-sqlite3"
+	// _ "github.com/mattn/go-sqlite3"
 	"github.com/rogue0026/shortener/internal/config"
+	_ "modernc.org/sqlite"
 )
 
 type Storage struct {
@@ -15,7 +16,7 @@ type Storage struct {
 func New(cfg *config.Shortener) (*Storage, error) {
 	const fn = "storage.sqlite.New"
 
-	connPool, err := sql.Open("sqlite3", cfg.StoragePath)
+	connPool, err := sql.Open("sqlite", cfg.StoragePath)
 	if err != nil {
 		return nil, fmt.Errorf("%s: %w", fn, err)
 	}

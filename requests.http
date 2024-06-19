@@ -1,7 +1,7 @@
 POST http://localhost:8080/
 Content-Type: text/plain
 
-https://example.com
+https://dzen.ru
 ###
 POST http://localhost:8080/api/shorten
 Content-Type: application/json
@@ -11,7 +11,7 @@ Accept-Encoding: gzip
   "url": "https://ok.ru"
 }
 ###
-POST http://localhost:8080/api/user/register
+POST http://localhost:8080/api/users/account
 Content-Type: application/json
 
 {
@@ -20,7 +20,7 @@ Content-Type: application/json
   "email": "test_email"
 }
 ###
-POST http://localhost:8080/api/user/login
+POST http://localhost:8080/api/users/login
 Content-Type: application/json
 
 {
